@@ -1,9 +1,12 @@
 // return pair in sorted array with target sum
-
 #include<stdio.h>
 #include<climits>
 #include<vector>
 using namespace std;
+
+// brute force approach
+// time complexity O(n^2)
+
 vector<int> pairsum(vector<int> nums,int target){
     vector<int> result;
     int n =nums.size();
@@ -17,6 +20,31 @@ vector<int> pairsum(vector<int> nums,int target){
         }
     }
 }
+
+// two pointer approach
+// time complexity O(n)
+vector<int> pairsum(vector<int> nums,int target){
+    vector<int> result;
+    int n =nums.size();
+    int left=0,right=n-1;
+    while(left<right){
+        int ps=nums[left]+nums[right];  
+        if(ps==target){
+            result.push_back(left);
+            result.push_back(right);
+            return result;
+        }
+        else if(ps<target){
+            left++;
+        }
+        else{
+            right--;
+        }
+    }
+    
+}
+
+
 int main(){
    
     vector<int> nums={1,2,3,4,5,6,7,8,9};
