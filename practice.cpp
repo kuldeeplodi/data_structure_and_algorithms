@@ -29,11 +29,16 @@ vector<int> sumarry(vector<int> arr,int target){
                 }
     }
 int main(){
-    vector<int> arr={1,2,3,4};
-    for (int i:sumarry(arr,11)){
-        cout<<i<<" ";
-    }
+    // vector<int> arr={1,2,3,4};
+    // for (int i:sumarry(arr,11)){
+    //     cout<<i<<" ";
+    // }
 
+
+    int arr[]={1,2,3,5,6};
+    int*ptr2;//100
+    int*ptr1=ptr2+2;//108
+    cout<<ptr1-ptr2<<endl;//2
 
                 
         
